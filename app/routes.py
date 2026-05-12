@@ -1,7 +1,7 @@
 from morecantile.defaults import TileMatrixSets, tms as default_tms
 from morecantile.models import TileMatrixSet
 from pyproj import CRS
-from titiler.core.factory import TMSFactory, TilerFactory
+from titiler.core.factory import TMSFactory, TilerFactory, ColorMapFactory
 from titiler.extensions.cogeo import cogValidateExtension
 from titiler.extensions.viewer import cogViewerExtension
 from titiler.extensions.wmts import wmtsExtension
@@ -43,3 +43,6 @@ cog = TilerFactory(
 
 # Optional endpoint exposing the list/definitions of TMS.
 tms_router = TMSFactory(supported_tms=supported_tms)
+
+# Colormaps router (built-in TiTiler endpoint)
+colormap_router = ColorMapFactory(router_prefix="/cog")
