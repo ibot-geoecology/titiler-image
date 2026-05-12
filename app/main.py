@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from titiler.core.errors import DEFAULT_STATUS_CODES, add_exception_handlers
 
-from routes import cog, tms_router, colormap_router
+from .routes import cog, tms_router, colormap_router
 
 app = FastAPI(title="CZGrids TiTiler with custom WMTS CRS")
 
